@@ -7,7 +7,7 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "What is VidBridge??",
+      question: "What is VidBridge?",
       answer:
         "VidBridge is a secure collaboration platform that connects YouTube creators with professional editors. It streamlines the entire post-production workflow—from uploading raw footage and reviewing edits to publishing directly on YouTube.",
     },
