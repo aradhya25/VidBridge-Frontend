@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 export default function FAQSection() {
   const [openItem, setOpenItem] = useState(null);
@@ -12,8 +12,7 @@ export default function FAQSection() {
         "VidBridge is a secure collaboration platform that connects YouTube creators with professional editors. It streamlines the entire post-production workflow—from uploading raw footage and reviewing edits to publishing directly on YouTube.",
     },
     {
-      question:
-        "How does VidBridge ensure my content’s security?",
+      question: "How does VidBridge ensure my content’s security?",
       answer:
         "Your files are transferred using encrypted connections, and all projects remain accessible only to you and your approved editors. VidBridge integrates with YouTube via a secure API, so your credentials are never exposed.",
     },
@@ -47,7 +46,7 @@ export default function FAQSection() {
             <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
             <span className="text-blue-600 font-medium text-sm">FAQs</span>
           </div>
-          <h2 className="text-3xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Frequently Asked Questions
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
@@ -64,13 +63,13 @@ export default function FAQSection() {
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="flex justify-between items-center w-full text-base font-medium text-black-500 py-1"
+                className="flex justify-between items-center w-full text-base font-medium text-gray-900 py-1 " 
                 aria-expanded={openItem === index}
                 aria-controls={`faq-content-${index}`}
               >
-                {faq.question}
+                <span className="text-left pr-4">{faq.question}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-gray-600 transition-transform duration-300 cursor-pointer ${
+                  className={`w-5 h-5 flex-shrink-0 text-gray-600 transition-transform duration-300 cursor-pointer ${
                     openItem === index ? "rotate-180" : ""
                   }`}
                 />

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -38,39 +38,41 @@ const features = [
     buttonText: "Get Started",
     mockup: "/images/CardCaraousel/card_3.jpg",
   },
-]
+];
 
 export function CardCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   useEffect(() => {
-    if (!isAutoPlaying) return
+    if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length)
-    }, 4000)
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
+    }, 4000);
 
-    return () => clearInterval(interval)
-  }, [isAutoPlaying])
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
 
   const goToSlide = (index) => {
-    setCurrentIndex(index)
-    setIsAutoPlaying(false)
-    setTimeout(() => setIsAutoPlaying(true), 10000)
-  }
+    setCurrentIndex(index);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length)
-    setIsAutoPlaying(false)
-    setTimeout(() => setIsAutoPlaying(true), 10000)
-  }
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + features.length) % features.length
+    );
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length)
-    setIsAutoPlaying(false)
-    setTimeout(() => setIsAutoPlaying(true), 10000)
-  }
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
 
   return (
     <section>
@@ -80,7 +82,7 @@ export function CardCarousel() {
             className="flex w-full"
             style={{
               transform: `translateX(-${currentIndex * 100}%)`,
-              transition: "transform 0.7s ease-in-out"
+              transition: "transform 0.7s ease-in-out",
             }}
           >
             {features.map((feature) => (
@@ -88,13 +90,13 @@ export function CardCarousel() {
                 key={feature.id}
                 className={`${feature.bgColor} w-full flex-shrink-0 px-3 py-6 md:px-6 md:py-8`}
               >
-                <div className="grid md:grid-cols-2 gap-6 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center h-full">
                   {/* Text Content */}
                   <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="space-y-5 max-w-xl"
+                    className="space-y-5 max-w-xl px-7 flex flex-col justify-center h-full"
                   >
                     <div className="flex items-center space-x-3">
                       <div className="text-xl md:text-2xl">{feature.icon}</div>
@@ -108,10 +110,12 @@ export function CardCarousel() {
                     <p className="text-gray-700 text-base md:text-lg leading-relaxed break-words">
                       {feature.description}
                     </p>
-                    <button className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 mr-7 rounded-full shadow-md transition transform hover:scale-105 cursor-pointer">
-                      {feature.buttonText}
-                      <ChevronRight className="ml-2 w-4 h-4" />
-                    </button>
+                    <div className="flex justify-center">
+                      <button className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-full shadow-md transition duration-200 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 cursor-pointer">
+                        {feature.buttonText}
+                        <ChevronRight className="ml-2 w-4 h-4" />
+                      </button>
+                    </div>
                   </motion.div>
                   {/* Image */}
                   <motion.div
@@ -153,12 +157,14 @@ export function CardCarousel() {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-blue-600 scale-125" : "bg-gray-300 hover:bg-gray-400"
+                index === currentIndex
+                  ? "bg-blue-600 scale-125"
+                  : "bg-gray-300 hover:bg-gray-400"
               }`}
             />
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

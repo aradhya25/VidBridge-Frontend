@@ -85,7 +85,7 @@ export default function Hero() {
         variants={stagger}
       >
         <motion.h1
-          className="text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight sm:leading-[1.2] md:leading-[1.15] tracking-tight text-center px-4 sm:px-0"
+          className="text-4xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-gray-900 leading-tight sm:leading-[1.2] md:leading-[1.15] tracking-tight text-center px-4 sm:px-0"
           variants={fadeInUp}
         >
           <span className="block mb-2">Seamless Collaboration</span>
