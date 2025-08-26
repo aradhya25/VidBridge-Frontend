@@ -37,7 +37,7 @@ export default function SignupPage() {
           aria-labelledby="signup-title"
           className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 max-w-md mx-auto w-full"
         >
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-3">
             <div
               className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center"
               aria-hidden="true"
@@ -160,24 +160,6 @@ export default function SignupPage() {
               </select>
             </div>
 
-            <div>
-              <label
-                htmlFor="avatar"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Avatar URL (optional)
-              </label>
-              <input
-                type="url"
-                id="avatar"
-                name="avatar"
-                value={formData.avatar}
-                onChange={handleInputChange}
-                placeholder="https://example.com/avatar.jpg"
-                className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-              />
-            </div>
-
             <button
               type="submit"
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer"
@@ -187,9 +169,9 @@ export default function SignupPage() {
             </button>
           </form>
 
-          <div className="flex items-center my-5" aria-hidden="true">
+          <div className="flex items-center my-2" aria-hidden="true">
             <div className="flex-1 border-t border-gray-300"></div>
-            <span className="px-3 text-xs text-gray-500 select-none">or</span>
+            <span className="px-3 text-xs text-gray-500 select-none  ">or</span>
             <div className="flex-1 border-t border-gray-300"></div>
           </div>
 
@@ -241,7 +223,7 @@ export default function SignupPage() {
             .
           </p>
 
-          <div className="flex items-center justify-center mt-5 gap-1">
+          <div className="flex items-center justify-center mt-2 gap-1">
             <span className="text-sm text-gray-600 select-none">
               Already have an account?
             </span>
@@ -254,13 +236,13 @@ export default function SignupPage() {
         {/* Right side */}
         <aside
           aria-label="Testimonial and trust section"
-          className="flex flex-col justify-start lg:items-start text-center lg:text-left space-y-8 px-4 mb-32"
+          className="flex flex-col justify-start lg:items-start text-center lg:text-left space-y-8 px-4 mb-18"
         >
           <div className="flex flex-col items-center lg:items-start space-y-4">
             <img
               src="/images/Signup/professional-video-creator-headshot.png"
               alt="Video creator headshot"
-              className="w-17 h-17 rounded-full object-cover shadow-md ml-43"
+              className="w-17 h-17 rounded-full object-cover shadow-md sm:ml-44"
               loading="lazy"
               decoding="async"
             />
