@@ -38,7 +38,7 @@ export default function SignupPage() {
           className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 max-w-md mx-auto w-full"
         >
           <div className="flex items-center gap-2 mb-4">
-             <span className="w-8 h-8 rounded-full flex items-center justify-center bg-blue-600">
+            <span className="w-8 h-8 rounded-full flex items-center justify-center bg-blue-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -62,7 +62,10 @@ export default function SignupPage() {
             </h1>
           </div>
 
-          <h2 className="text-2xl font-semibold text-gray-900 mb-5" tabIndex={-1}>
+          <h2
+            className="text-2xl font-semibold text-gray-900 mb-5"
+            tabIndex={-1}
+          >
             Sign up
           </h2>
 
@@ -147,20 +150,38 @@ export default function SignupPage() {
               >
                 Role
               </label>
-              <select
-                id="role"
-                name="role"
-                value={formData.role}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-500 transition duration-200"
-              >
-                <option value="" disabled>
-                  Select your role
-                </option>
-                <option value="creator">Creator</option>
-                <option value="editor">Editor</option>
-              </select>
+              <div className="relative">
+                <select
+                  id="role"
+                  name="role"
+                  value={formData.role}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full appearance-none px-3 py-2.5 pr-10 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-500 transition duration-200 hover:border-gray-400"
+                >
+                  <option value="" disabled>
+                    Select your role
+                  </option>
+                  <option value="creator">Creator</option>
+                  <option value="editor">Editor</option>
+                </select>
+
+                {/* Custom dropdown arrow */}
+                <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                  <svg
+                    className="h-5 w-5 text-gray-500"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L10 9.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
 
             <button
@@ -230,7 +251,10 @@ export default function SignupPage() {
             <span className="text-sm text-gray-600 select-none">
               Already have an account?
             </span>
-            <button onClick={() => navigate("/signin")} className="text-sm text-blue-600 hover:underline font-medium focus:outline-none cursor-pointer ">
+            <button
+              onClick={() => navigate("/signin")}
+              className="text-sm text-blue-600 hover:underline font-medium focus:outline-none cursor-pointer "
+            >
               Log in
             </button>
           </div>
