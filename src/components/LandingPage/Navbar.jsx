@@ -58,7 +58,7 @@ function Navbar() {
 
           {/* Book Demo Button - Desktop */}
           <div className="hidden md:flex">
-            <button  className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-sm rounded-full font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer">
+            <button onClick={() => navigate("/signin")}  className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-sm rounded-full font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer">
               Sign in
             </button>
           </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function SignupPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -28,7 +28,7 @@ export default function SignupPage() {
   const handleGoogleSignIn = () => {
     console.log("Google sign-in clicked");
   };
-
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
       <div className="w-full max-w-5xl grid lg:grid-cols-2 gap-12 items-center">
@@ -37,20 +37,23 @@ export default function SignupPage() {
           aria-labelledby="signup-title"
           className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 max-w-md mx-auto w-full"
         >
-          <div className="flex items-center gap-3 mb-3">
-            <div
-              className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center"
-              aria-hidden="true"
-            >
+          <div className="flex items-center gap-2 mb-4">
+             <span className="w-8 h-8 rounded-full flex items-center justify-center bg-blue-600">
               <svg
-                className="w-4 h-4 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="w-5 h-5"
+                fill="white"
+                stroke="none"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 aria-hidden="true"
               >
-                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                <rect x="3" y="7" width="11" height="10" rx="2" ry="2" />
+                <polygon points="16 10 21 7 21 17 16 14 16 10" />
               </svg>
-            </div>
+            </span>
             <h1
               id="signup-title"
               className="text-lg font-semibold text-gray-900 select-none"
@@ -59,7 +62,7 @@ export default function SignupPage() {
             </h1>
           </div>
 
-          <h2 className="text-2xl font-bold text-gray-900 mb-5" tabIndex={-1}>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-5" tabIndex={-1}>
             Sign up
           </h2>
 
@@ -223,11 +226,11 @@ export default function SignupPage() {
             .
           </p>
 
-          <div className="flex items-center justify-center mt-2 gap-1">
+          <div className="flex items-center justify-center mt-1 gap-1">
             <span className="text-sm text-gray-600 select-none">
               Already have an account?
             </span>
-            <button className="text-sm text-blue-600 hover:underline font-medium focus:outline-none cursor-pointer">
+            <button onClick={() => navigate("/signin")} className="text-sm text-blue-600 hover:underline font-medium focus:outline-none cursor-pointer ">
               Log in
             </button>
           </div>
