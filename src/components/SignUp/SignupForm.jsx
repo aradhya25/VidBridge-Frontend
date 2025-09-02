@@ -247,7 +247,7 @@ export default function SignupPage() {
             .
           </p>
 
-          <div className="flex items-center justify-center mt-1 gap-1">
+          <div className="flex items-center justify-center gap-1">
             <span className="text-sm text-gray-600 select-none">
               Already have an account?
             </span>
