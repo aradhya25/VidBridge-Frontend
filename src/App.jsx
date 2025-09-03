@@ -7,6 +7,7 @@ import AboutUs from "./pages/AboutUs";
 import PricingPage from "./pages/PricingPage";
 import LoginPage from "./pages/LoginPage";
 import OtpPage from "./pages/OtpPage";
+import CreateProject from "./pages/CreateProjectForm";
 function App() {
   return (
     <Routes>
@@ -17,6 +18,7 @@ function App() {
       <Route path="/pricing" element={<PricingPage />} />
       <Route path="/signin" element={<LoginPage />} />
       <Route path="/otp" element={<OtpPage />} />
+      <Route path="/createproject" element={<CreateProject />} />
     </Routes>
   );
 }
