@@ -8,6 +8,8 @@ import PricingPage from "./pages/PricingPage";
 import LoginPage from "./pages/LoginPage";
 import OtpPage from "./pages/OtpPage";
 import CreateProject from "./pages/CreateProjectForm";
+import Profile from "./pages/Profile";
+import ProfilePrice from "./pages/ProfilePrice";
 function App() {
   return (
     <Routes>
@@ -19,6 +21,8 @@ function App() {
       <Route path="/signin" element={<LoginPage />} />
       <Route path="/otp" element={<OtpPage />} />
       <Route path="/createproject" element={<CreateProject />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/profile-pricing" element={<ProfilePrice/>} />
     </Routes>
   );
 }
