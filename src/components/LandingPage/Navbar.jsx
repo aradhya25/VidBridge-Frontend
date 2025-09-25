@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -41,8 +41,6 @@ function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
-
-
             {["Home", "Pricing", "Our Work", "About Us", "Contact"].map(
               (label) => (
                 <a
@@ -58,7 +56,10 @@ function Navbar() {
 
           {/* Book Demo Button - Desktop */}
           <div className="hidden md:flex">
-            <button onClick={() => navigate("/signin")}  className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-sm rounded-full font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer">
+            <button
+              onClick={() => navigate("/signin")}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-sm rounded-full font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer"
+            >
               Sign in
             </button>
           </div>
@@ -108,23 +109,19 @@ function Navbar() {
             className="md:hidden border-t border-gray-100 bg-white overflow-hidden"
           >
             <div className="px-4 py-4 space-y-2">
-              {[
-                "Home",
-                "Pricing",
-                "Our Work",
-                "About Us",
-                "Contact Us",
-              ].map((label) => (
-                <a
-                  key={label}
-                  href={`/${label.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors px-2"
-                >
-                  {label}
-                </a>
-              ))}
+              {["Home", "Pricing", "Our Work", "About Us", "Contact Us"].map(
+                (label) => (
+                  <a
+                    key={label}
+                    href={`/${label.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors px-2"
+                  >
+                    {label}
+                  </a>
+                )
+              )}
               <div className="pt-3">
-                <button className="w-full py-2 rounded-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 shadow-sm hover:shadow-md active:scale-95">
+                <button onClick={() => navigate("/signin")} className="w-full py-2 rounded-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 cursor-pointer">
                   Sign in
                 </button>
               </div>

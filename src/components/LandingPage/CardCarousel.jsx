@@ -111,7 +111,7 @@ export function CardCarousel() {
                       {feature.description}
                     </p>
                     <div className="flex justify-center">
-                      <button className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-full shadow-md transition duration-200 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 cursor-pointer">
+                      <button className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-full shadow-md transition duration-200 ease-in-out transform hover:scale-105 focus:outline-none  cursor-pointer">
                         {feature.buttonText}
                         <ChevronRight className="ml-2 w-4 h-4" />
                       </button>
